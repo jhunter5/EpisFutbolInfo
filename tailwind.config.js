@@ -11,7 +11,7 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        jaro: ['"Jaro"', ...defaultTheme.fontFamily.sans],
+        bebas: ['"Bebas Neue"', ...defaultTheme.fontFamily.sans],
         assistant: ['"Assistant"', ...defaultTheme.fontFamily.sans]
       }
     },
@@ -21,7 +21,7 @@ const config = {
 
 module.exports = withMaterialColors(config, {
   // Your base colors as HEX values. 'primary' is required.
-  primary: '#006A61',
+  primary: '#0A6522',
   // secondary and/or tertiary are optional, if not set they will be derived from the primary color.
   secondary: '#231942',
   tertiary: '#F8B1DC',

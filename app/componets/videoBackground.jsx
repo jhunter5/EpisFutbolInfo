@@ -9,7 +9,7 @@ export default function VideoBackground(props) {
         >
         <source src={props.source} type="video/mp4" />
         </video>
-        <div className="absolute z-10 w-full h-full bg-surface opacity-90"></div>
+        <div className="absolute z-10 w-full h-full bg-surface opacity-80"></div>
         </>
     );
 }
