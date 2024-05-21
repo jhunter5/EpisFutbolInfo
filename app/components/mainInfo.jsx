@@ -8,7 +8,7 @@ export default function MainInfo() {
             EpiStats its an aplicattion that allows you to see the statistics of the <span className="text-secondary">EPIS team</span> team along with the statistics of the players.
           </p>
           <div className="flex flex-row justify-center w-full gap-12">
-            <Link className="bg-primary-container text-surface-container rounded-xl p-2 " href={'/login'}><span className="text-on-primary-container">View the stats</span> </Link>
+            <Link className="bg-primary-container text-surface-container rounded-xl p-2 " href={'/historial'}><span className="text-on-primary-container">View the stats</span> </Link>
             <Link className="bg-secondary-container text-surface-container rounded-xl p-2" href={'/login'}> <span className="text-on-secondary-container">About the team</span></Link>
           </div>
         </section>

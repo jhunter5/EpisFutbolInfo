@@ -1,4 +1,5 @@
 import "./globals.css";
+import Navbar from "./components/navbar";
 
 export const metadata = {
   title: "EpiStats",
@@ -13,8 +14,9 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin ></link>
         <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Bebas+Neue&display=swap" rel="stylesheet"></link>
       </head>
-      <body >{children}
-        
+      <body >
+        <Navbar />
+        {children}
       </body>
     </html>
   );
