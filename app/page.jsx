@@ -3,6 +3,7 @@ import MainInfo from "./components/mainInfo";
 import MusicPlayer from "./components/musicPlayer";
 import Footer from "./components/footer";
 
+
 export default function Home() {
   return (
     <>

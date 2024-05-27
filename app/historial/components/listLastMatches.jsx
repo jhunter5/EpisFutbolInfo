@@ -1,9 +1,8 @@
-'use client'
-
 import SingleMatch from "./singleMatch";
 import SurfaceContainerLowRounded from "./surfaceContainerLowRounded";
-import { useEffect } from "react";
+import SeeMoreButton from "./seeMoreButton";
 import { useQuery } from '@tanstack/react-query'
+
 async function fetchMatches() {
     const response = await fetch('https://6649364d4032b1331bed7e34.mockapi.io/api/historialPartidos', {
         method: 'GET',
@@ -25,6 +24,7 @@ export default function ListLastMatches() {
             {isPending && <p>Cargando...</p>}
             {isError && <p>Error: {error.message}</p>}
             {data && data.map((match) => <SingleMatch key={match.id} match={match} />)}
+            <SeeMoreButton />
         </ SurfaceContainerLowRounded>
     )
 }

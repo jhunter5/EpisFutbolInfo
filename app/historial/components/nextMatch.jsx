@@ -1,15 +1,29 @@
-import TeamCard from "./teamCard";
 import SurfaceContainerLowRounded from "./surfaceContainerLowRounded";
-import SurfaceContainerRounded from "./surfaceContainerRounded";
+import SeeMoreButton from "./seeMoreButton";
+import SingleMatch from "./singleMatch";
+import { useQuery } from '@tanstack/react-query'
 
-export default function NextMatch({ match }) {
+async function fetchNextMatch() {
+    const response = await fetch('https://6649364d4032b1331bed7e34.mockapi.io/api/nextMatch', {
+        method: 'GET',
+    });
+    const data = await response.json();
+    return data[1];
+}
+
+export default function NextMatch() {
+
+    const { isPending, isError, data, error } = useQuery({
+        queryKey: ['nextMatch'],
+        queryFn: fetchNextMatch,
+    })
+    
     return (
         <SurfaceContainerLowRounded>
-            <SurfaceContainerRounded>
-            <TeamCard team={{logo: "https://media.api-sports.io/football/teams/40.png", name:'Liverpool' }} />
-            <p className="text-2xl text-primary">VS</p>
-            <TeamCard team={{logo: `https://media.api-sports.io/football/teams/50.png`, name:'Manchester City' }} />
-            </ SurfaceContainerRounded>
+            {isPending && <p>Cargando...</p>}
+            {isError && <p>Error: {error.message}</p>}
+            {data && <SingleMatch match={data} isNextMatch={true} />}
+            <SeeMoreButton onClick={() => console.log("Ver más")} />
         </SurfaceContainerLowRounded >
         
     );

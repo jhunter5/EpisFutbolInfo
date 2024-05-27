@@ -1,7 +1,10 @@
 'use client'
 import ListLastMatches from "./components/listLastMatches"
 import NextMatch from "./components/nextMatch"
+import PlayersCard from "./components/playersCard"
+
 import {QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
 
 export default function Historial() {
     const queryClient = new QueryClient()
@@ -9,17 +12,16 @@ export default function Historial() {
     return(
         <QueryClientProvider client={queryClient}>
             <main className="flex min-h-screen justify-center items-center bg-surface p-10">
-                <div className="flex w-11/12 h-full p-4 gap-20 mt-8"> 
-                    <div className="w-4/5">
-                        <img src="/aside-soccer.jpg" alt="" className="h-full w-full" />
-                    </div>
-                    <div className="flex flex-col items-center w-full">
-                        <h1>Proximo Partido</h1>
-                        <p>El proximo partido del equipo</p>
+                <div className="w-11/12 h-full p-4 mt-8"> 
+                    <div className="flex flex-col items-center w-full gap-5">
+                        <h1 className="font-bebas text-primary text-3xl">Next Match</h1>
+                        <p className="font-assistant mb-2">Team's next match</p>
                         <NextMatch />
-                        <h1>Historial</h1>
-                        <p>Historial de partidos jugados por el equipo</p>
+                        <h1 className="font-bebas text-primary text-3xl mt-4">History</h1>
+                        <p className="font-assistant mb-2">The last 3 games</p>
                         <ListLastMatches />
+                        <h1 className="font-bebas text-primary text-3xl mt-4">Know the players</h1>
+                        <PlayersCard />
                     </div>
                 </div>
             </main>
